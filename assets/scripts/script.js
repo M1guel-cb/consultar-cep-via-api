@@ -3,16 +3,18 @@ const cidade = document.querySelector("#cidade");
 const logradouro = document.querySelector("#log");
 const complemento = document.querySelector("#compl");
 const bairro = document.querySelector("#bairro");
+const botao = document.querySelector("#botao");
+var cep = 0;
 
 function consultarCEP() {
-    let cep = document.querySelector("input#cep").value;
+    cep = document.querySelector("input#cep").value;
 
     if (cep.length !== 8) {
         alert("CEP inválido!");
         return;
     }
 
-    let url = `https://viacep.com.br/ws/${cep}/json/`;
+    var url = `https://viacep.com.br/ws/${cep}/json/`;
 
     fetch(url).then(function (response) {
         response.json().then(function (data) {
@@ -22,5 +24,11 @@ function consultarCEP() {
             complemento.value = data.complemento;
             logradouro.value = data.logradouro;
         });
+    });
+}
+
+function copy() {
+    navigator.clipboard.writeText(cep).then(() => {
+        console.log('CEP copiado!');
     });
 }
