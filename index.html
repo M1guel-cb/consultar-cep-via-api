@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/styles/style.css" />
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+        <title>Consultar Endereço via API</title>
+    </head>
+    <body>
+        <section>
+            <h1>Consultar Endereço</h1>
+
+            <label for="cep">Digite seu CEP: </label>
+            <input type="number" id="cep" onblur="consultarCEP()" step="1" min="0"/>
+
+            <div id="res">
+                <label for="estado">Estado: </label>
+                <input type="text" name="estado" id="estado">
+
+                <label for="cidade">Cidade: </label>
+                <input type="text" name="cidade" id="cidade">
+
+                <label for="log">Logradouro: </label>
+                <input type="text" name="log" id="log">
+
+                <label for="bairro">Bairro: </label>
+                <input type="text" name="bairro" id="bairro">
+
+                <label for="compl">Complemento: </label>
+                <input type="text" name="compl" id="compl">
+            </div>
+
+        </section>
+        <script src="assets/scripts/script.js"></script>
+    </body>
+</html>
