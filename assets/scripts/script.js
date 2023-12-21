@@ -9,6 +9,7 @@ var text
 
 function consultarCEP() {
     cep = document.querySelector("input#cep").value;
+    cep = ((cep).replace('.', '')).replace('-', '')
 
     if (cep.length !== 8) {
         alert("CEP inválido!");
@@ -57,7 +58,7 @@ function consultarCEP() {
             if (logradouro.value == 'Não encontrei nada' && complemento.value == 'Não encontrei nada' && bairro.value == 'Não encontrei nada') {
                 text = `CEP inválido!`
             } else {
-            text = `CEP: ${cep}
+                text = `CEP: ${document.querySelector("input#cep").value}
 Logradouro: ${logradouro.value}
 Bairro: ${bairro.value}
 Complemento: ${complemento.value}
